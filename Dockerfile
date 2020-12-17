@@ -28,7 +28,7 @@ ADD packages.txt /app/
 RUN /app/hexdump
 RUN rm /app/hexdump
 
-ADD plugins/ /plugins/
+COPY --from=build plugins/ /plugins/
 
 # EXPOSE 5000
 
