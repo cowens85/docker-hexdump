@@ -161,7 +161,7 @@ func getReleaseRequirements(releaseURL string, client *http.Client, attempt int)
 	}
 	defer response.Body.Close()
 
-	fmt.Println("Attempt", attempt, "to get requirements")
+	fmt.Println("Attempt", attempt, "to get requirements from: " + releaseURL)
 
 	if response.StatusCode != 200 {
                 if attempt <= 3 {
