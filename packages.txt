@@ -60,6 +60,7 @@ fun_with_flags_ui
 gen_stage
 gproc
 guardian
+hackney
 heap
 horde
 hound
@@ -79,6 +80,7 @@ logger_logstash_backend
 logrex
 logstash_json
 maybe
+membrane_demo_rtp_to_hls
 memento
 mint
 mix_test_watch
