@@ -3,16 +3,25 @@ name: Go
 on: workflow_dispatch
 
 jobs:
-  ci:
+  docker:
     runs-on: ubuntu-latest
     steps:
-    - uses: docker-practice/actions-setup-docker@master
-      run: |
-        docker pull cowens09/hexdump:1.1.0
-        docker save cowens09/hexdump:1.1.0 | gzip > cowens09_hexdump_1.1.0.tgz
-    - name: 'Upload Artifact'
-      uses: actions/upload-artifact@v2
-      with:
-        name: cowens09_hexdump_1.1.0
-        path: cowens09_hexdump_1.1.0.tgz
-        retention-days: 2
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Pull
+        id: docker_build
+        run: |
+          docker pull cowens09/hexdump:1.1.0
+          docker save cowens09/hexdump:1.1.0 | gzip > cowens09_hexdump_1.1.0.tgz
+      - 
+        name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: cowens09_hexdump_1.1.0
+          path: cowens09_hexdump_1.1.0.tgz
+          retention-days: 2
