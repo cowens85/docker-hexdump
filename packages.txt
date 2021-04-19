@@ -123,6 +123,7 @@ private
 proper_case
 quantum
 rabbit
+recon
 redirect
 redix
 redix_pubsub
