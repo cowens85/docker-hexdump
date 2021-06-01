@@ -36,6 +36,7 @@ elixometer
 elsa
 erlavro
 erlport
+ersip
 ets
 etso
 examine
@@ -131,6 +132,9 @@ redix_pubsub
 retry
 rustler
 shorter_maps
+sippet
+sippet_proxy
+sippet_uri
 slugify
 socket
 stream_data
